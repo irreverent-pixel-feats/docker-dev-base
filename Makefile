@@ -9,7 +9,7 @@ data/version:
 	diff -q latest-version data/version || cp -v latest-version data/version
 	rm latest-version
 
-deps: data/version tars/idris-${IDRIS_VERSION}.tar.gz
+deps: data/version
 
 build: deps Dockerfile
 	docker pull "${REPO}:${BASE_TAG}" || true
