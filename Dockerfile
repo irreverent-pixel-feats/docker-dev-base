@@ -6,7 +6,7 @@ ENV TERM=xterm-256color
 
 ## deps
 RUN apt-get update -y \
-  && apt-get install -y dos2unix software-properties-common apt-transport-https autoconf automake build-essential libtool make gcc g++ libgmp-dev ncurses-dev libtinfo-dev python3 xz-utils dh-autoreconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev \
+  && apt-get install -y language-pack-en dos2unix software-properties-common apt-transport-https autoconf automake build-essential libtool make gcc g++ libgmp-dev ncurses-dev libtinfo-dev python3 xz-utils dh-autoreconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev \
   && curl -o /tmp/ipf-public-key.asc "https://bintray.com/user/downloadSubjectPublicKey?username=irreverent-pixel-feats" \
   && dos2unix /tmp/ipf-public-key.asc \
   && apt-key add /tmp/ipf-public-key.asc \
