@@ -16,7 +16,7 @@ RUN apt-get update -y \
   && add-apt-repository -y "https://dl.bintray.com/irreverent-pixel-feats/ipf xenial main" \
   && apt-get update -y \
   && apt-get install -y \
-      fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip \
+      jq fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip \
       'bitb=0.0.1-20180330065030-8bb84dd'
 
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
