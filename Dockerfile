@@ -19,9 +19,9 @@ RUN apt-get update -y \
       jq fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip \
       'bitb=0.0.1-20180330065030-8bb84dd'
 
-RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
+RUN git clone https://github.com/junegunn/fzf.git ~/.fzf \
   && cd ~/.fzf \
-  && git checkout "62f062e" \
+  && git checkout "315e568" \
   && ~/.fzf/install --all
 
 ADD data tmp
