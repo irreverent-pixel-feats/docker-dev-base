@@ -1,6 +1,6 @@
 PWD = $(shell pwd)
 REPO = irreverentpixelfeats/dev-base
-BASE_TAG = ubuntu_xenial
+BASE_TAG = ubuntu_bionic
 
 .PHONY: deps build image all
 
