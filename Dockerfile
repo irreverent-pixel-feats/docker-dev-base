@@ -1,8 +1,11 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 MAINTAINER Dom De Re <domdere@irreverentpixelfeats.com>
 
 ENV LC_ALL=en_US.utf8
 ENV TERM=xterm-256color
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Australia
 
 ## deps
 RUN apt-get update -y \
@@ -13,11 +16,12 @@ RUN apt-get update -y \
   && apt-add-repository -y "ppa:kelleyk/emacs" \
   && apt-add-repository -y "ppa:git-core/ppa" \
   && apt-add-repository -y "ppa:neovim-ppa/stable" \
-  && add-apt-repository -y "https://dl.bintray.com/irreverent-pixel-feats/ipf xenial main" \
   && apt-get update -y \
   && apt-get install -y \
-      jq fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip \
-      'bitb=0.0.1-20180330065030-8bb84dd'
+      jq fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip
+
+#'bitb=0.0.1-20180330065030-8bb84dd'
+#&& add-apt-repository -y "https://dl.bintray.com/irreverent-pixel-feats/ipf bionic main" \
 
 RUN git clone https://github.com/junegunn/fzf.git ~/.fzf \
   && cd ~/.fzf \
