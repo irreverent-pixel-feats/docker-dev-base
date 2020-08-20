@@ -13,14 +13,14 @@ RUN apt-get update -y \
   && curl -o /tmp/ipf-public-key.asc "https://bintray.com/user/downloadSubjectPublicKey?username=irreverent-pixel-feats" \
   && dos2unix /tmp/ipf-public-key.asc \
   && apt-key add /tmp/ipf-public-key.asc \
+  && add-apt-repository -y "https://dl.bintray.com/irreverent-pixel-feats/ipf bionic main" \
   && apt-add-repository -y "ppa:kelleyk/emacs" \
   && apt-add-repository -y "ppa:git-core/ppa" \
   && apt-add-repository -y "ppa:neovim-ppa/stable" \
   && apt-get update -y \
   && apt-get install -y \
-      jq fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip
-
-#'bitb=0.0.1-20180330065030-8bb84dd'
+      jq fish git openssh-client emacs25 language-pack-en-base fontconfig neovim zip \
+      'bitb=0.0.1-20200820010225-62eece1'
 #&& add-apt-repository -y "https://dl.bintray.com/irreverent-pixel-feats/ipf bionic main" \
 
 RUN git clone https://github.com/junegunn/fzf.git ~/.fzf \
